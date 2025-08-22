@@ -7,6 +7,7 @@ const BaseLayout = lazy(() => import("@/app/layouts/base-layout"));
 
 const Home: Component = lazy(() => import("@/pages/home"));
 const NotFound: Component = lazy(() => import("@/pages/not-found"));
+const Phone: Component = lazy(() => import("@/pages/phone"));
 
 export const Router = () => {
   return createBrowserRouter([
@@ -19,6 +20,10 @@ export const Router = () => {
           element: <Home />,
         },
       ],
+    },
+    {
+      path: "phone",
+      element: <Phone />,
     },
     {
       path: "*",

@@ -84,5 +84,15 @@
     "placeholder": "Sizning email manzilingiz",
     "copyright": "Mualliflik huquqi © 2020 UzBrick ltd.",
     "author": "Barcha huquqlar himoyalangan."
+  },
+  "phone": {
+    "title": "Bepul maslahat oling",
+    "description": "Formani to‘ldiring va maslahat oling",
+    "form": {
+      "name": "Ism",
+      "phone": "Telefon",
+      "comment": "Izoh"
+    },
+    "button": "Qo‘ng‘iroq buyurtma qilish"
   }
 }

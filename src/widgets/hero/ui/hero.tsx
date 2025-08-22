@@ -12,9 +12,11 @@ import {
 import Cartoon from "@/shared/assets/images/cartoon.svg";
 import classes from "./hero.module.pcss";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const size = useMatches({
     base: "md",
@@ -34,7 +36,7 @@ const Hero = () => {
                 </Text>
               </Text>
               <Text className={classes.text}>{t("hero.description")}</Text>
-              <Button size={size} className={classes.button}>
+              <Button size={size} className={classes.button} onClick={() => navigate("phone")}>
                 {t("hero.phone")}
               </Button>
             </Stack>

@@ -2,6 +2,7 @@
     background: #ffffff;
     padding-top: 50px;
     padding-bottom: 50px;
+    overflow: hidden;
 
     .container {
         .grid {
@@ -23,6 +24,13 @@
                         font-size: 36px;
                         line-height: 44px;
                         color: #4D4D4D;
+
+                        @media (max-width: 48em) {
+                            & {
+                                font-size: 32px;
+                                line-height: 36px;
+                            }
+                        }
                     }
 
                     .description {

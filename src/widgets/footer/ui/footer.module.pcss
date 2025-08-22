@@ -3,10 +3,23 @@
     padding-top: 64px;
     padding-bottom: 64px;
 
+    @media (max-width: 48em) {
+        & {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+    }
+
     .container {
         .flex {
             .leftStack {
                 gap: var(--mantine-spacing-xl);
+
+                @media (max-width: 48em) {
+                    & {
+                        gap: var(--mantine-spacing-xs);
+                    }
+                }
 
                 .logoImage {
                     width: 150px;
@@ -42,6 +55,13 @@
                     font-size: 20px;
                     line-height: 28px;
                     color: #FFFFFF;
+
+                    @media (max-width: 48em) {
+                        & {
+                            font-size: 16px;
+                            line-height: 24%;
+                        }
+                    }
                 }
 
                 .input {
@@ -55,6 +75,12 @@
 
                 .inputStyle::placeholder {
                     color: #D9DBE1;
+
+                    @media (max-width: 48em) {
+                        & {
+                            font-size: 14px;
+                        }
+                    }
                 }
             }
         }

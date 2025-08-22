@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Group, Image, Stack, Text } from "@mantine/core";
+import { Box, Container, Grid, Group, Image, Stack, Text, useMatches } from "@mantine/core";
 import Logo1 from "@/shared/assets/logo/Logo-1.svg";
 import Logo2 from "@/shared/assets/logo/Logo-2.svg";
 import Logo3 from "@/shared/assets/logo/Logo-3.svg";
@@ -11,11 +11,21 @@ import classes from "./about.module.pcss";
 const logos = [Logo6, Logo1, Logo2, Logo3, Logo4, Logo5];
 
 const About = () => {
+  const width = useMatches({
+    base: 40,
+    sm: 50,
+  });
+
+  const gap = useMatches({
+    base: "xs",
+    sm: "xl",
+  });
+
   return (
     <Box className={classes.wrapper}>
       <Container size="lg" className={classes.container}>
         <Grid gutter={100} className={classes.grid}>
-          <Grid.Col span="content" className={classes.imageCol}>
+          <Grid.Col visibleFrom="sm" span="content" className={classes.imageCol}>
             <Image src={Tesla} alt="UzBrick production" className={classes.image} />
           </Grid.Col>
           <Grid.Col span="auto" className={classes.contentCol}>
@@ -36,11 +46,11 @@ const About = () => {
                 Производственные мощности UzBrick позволяют выпускать до [указать объем] кирпичей в
                 месяц, что обеспечивает стабильные поставки для объектов любой сложности.
               </Text>
-              <Group className={classes.logosGroup} gap="xl">
+              <Group className={classes.logosGroup} gap={gap}>
                 {logos.map((icon, index) => (
                   <Image
                     src={icon}
-                    w={50}
+                    w={width}
                     key={index}
                     alt={`Client logo ${index + 1}`}
                     className={classes.logoImage}

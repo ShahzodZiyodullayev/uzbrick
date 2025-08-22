@@ -1,13 +1,18 @@
-import { Box, Button, Container, Grid, Image, Stack, Text, Title } from "@mantine/core";
+import { Box, Button, Container, Grid, Image, Stack, Text, Title, useMatches } from "@mantine/core";
 import Partnerships from "@/shared/assets/images/partnership.svg";
 import classes from "./partnership.module.pcss";
 
 const Partnership = () => {
+  const size = useMatches({
+    base: "md",
+    sm: "lg",
+  });
+
   return (
     <Box className={classes.wrapper}>
       <Container size="lg" className={classes.container}>
         <Grid gutter={100} className={classes.grid}>
-          <Grid.Col span="content" className={classes.imageCol}>
+          <Grid.Col visibleFrom="sm" span="content" className={classes.imageCol}>
             <Image src={Partnerships} className={classes.image} />
           </Grid.Col>
           <Grid.Col span="auto" className={classes.contentCol}>
@@ -19,7 +24,7 @@ const Partnership = () => {
                 поддержку на всех этапах. Свяжитесь с нами для обсуждения условий и заключения
                 договора.
               </Text>
-              <Button w="max-content" size="lg" className={classes.ctaButton}>
+              <Button w="max-content" size={size} className={classes.ctaButton}>
                 Связаться
               </Button>
             </Stack>

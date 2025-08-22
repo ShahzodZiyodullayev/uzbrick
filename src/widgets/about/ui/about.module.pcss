@@ -2,6 +2,7 @@
     background: #F5F7FA;
     padding-top: 32px;
     padding-bottom: 32px;
+    overflow: hidden;
 
     .container {
         .grid {
@@ -25,11 +26,25 @@
                         line-height: 44px;
                         color: #4D4D4D;
 
+                        @media (max-width: 48em) {
+                            & {
+                                font-size: 32px;
+                                line-height: 36px;
+                            }
+                        }
+
                         .subTitle {
                             font-weight: 600;
                             font-size: 36px;
                             line-height: 44px;
                             color: #8C3B35;
+
+                            @media (max-width: 48em) {
+                                & {
+                                    font-size: 32px;
+                                    line-height: 36px;
+                                }
+                            }
                         }
                     }
 
@@ -38,6 +53,13 @@
                         font-size: 16px;
                         line-height: 24px;
                         color: #717171;
+
+                        @media (max-width: 48em) {
+                            & {
+                                font-size: 14px;
+                                line-height: 20px;
+                            }
+                        }
                     }
 
                     .logosGroup {

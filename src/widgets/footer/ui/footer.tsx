@@ -8,6 +8,7 @@ import {
   Stack,
   Text,
   TextInput,
+  useMatches,
 } from "@mantine/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
@@ -16,12 +17,22 @@ import classes from "./footer.module.pcss";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 
 const Footer = () => {
+  const direction: any = useMatches({
+    base: "column-reverse",
+    sm: "row",
+  });
+
+  const gap = useMatches({
+    base: 30,
+    sm: 0,
+  });
+
   return (
     <Box className={classes.wrapper}>
       <Container size="lg" className={classes.container}>
-        <Flex justify="space-between" className={classes.flex}>
+        <Flex justify="space-between" gap={gap} direction={direction} className={classes.flex}>
           <Stack className={classes.leftStack}>
-            <Image src={Logo} alt="UzBrick logo" className={classes.logoImage} />
+            <Image visibleFrom="sm" src={Logo} alt="UzBrick logo" className={classes.logoImage} />
             <Stack gap={4} className={classes.copyrightStack}>
               <Text className={classes.copyrightText}>Авторское право © 2020 Uzbrick ltd.</Text>
               <Text className={classes.copyrightText}>Все права защищены.</Text>

@@ -32,7 +32,7 @@ const Stats = () => {
             <SimpleGrid verticalSpacing="xl" cols={2} className={classes.statsGrid}>
               {statsData.map(({ icon, value, label }, idx) => (
                 <Grid key={idx} className={classes.statItem}>
-                  <Grid.Col span="content" className={classes.statIconCol}>
+                  <Grid.Col span={3} className={classes.statIconCol}>
                     <Image src={icon} className={classes.icon} />
                   </Grid.Col>
                   <Grid.Col span="auto" className={classes.statContentCol}>

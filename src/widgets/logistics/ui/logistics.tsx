@@ -1,7 +1,11 @@
-import { Box, Card, Container, SimpleGrid, Stack, Text, Title } from "@mantine/core";
+import { Box, Card, Container, SimpleGrid, Stack, Text, Title, useMatches } from "@mantine/core";
 import classes from "./logistics.module.pcss";
 
 const Logistics = () => {
+  const spacings = useMatches({
+    base: 20,
+    md: 100,
+  });
   return (
     <Box className={classes.wrapper}>
       <Container size="lg" className={classes.container}>
@@ -11,7 +15,7 @@ const Logistics = () => {
             Мы знаем, насколько важно соблюдать сроки строительства. Поэтому UzBrick предлагает
             оперативную доставку кирпича прямо на ваш объект.
           </Text>
-          <SimpleGrid cols={3} spacing={100} className={classes.grid}>
+          <SimpleGrid cols={{ base: 1, md: 3 }} spacing={spacings} className={classes.grid}>
             <Card className={classes.card} withBorder>
               <Title className={classes.cardTitle}>Подготовка продукции</Title>
               <Text className={classes.cardText}>

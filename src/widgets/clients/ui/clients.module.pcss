@@ -1,0 +1,54 @@
+.wrapper {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: #ffffff;
+
+    .container {
+        .header {
+            align-items: center;
+            flex-direction: column;
+
+            .title {
+                font-weight: 600;
+                font-size: 36px;
+                line-height: 44px;
+                color: #4D4D4D;
+                margin-bottom: 10px;
+
+                @media (max-width: 48em) {
+                    & {
+                        font-size: 32px;
+                        line-height: 36px;
+                    }
+                }
+            }
+
+            .subtitle {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 24px;
+                color: #717171;
+                text-align: center;
+
+                @media (max-width: 48em) {
+                    & {
+                        font-size: 14px;
+                        line-height: 20px;
+                    }
+                }
+            }
+        }
+
+        .carousel {
+            padding-top: 30px;
+
+            .slide {
+                .logoImage {
+                    width: auto;
+                    border-radius: var(--mantine-radius-lg);
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}

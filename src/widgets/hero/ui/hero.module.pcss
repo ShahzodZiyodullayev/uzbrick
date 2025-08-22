@@ -1,0 +1,65 @@
+.heroWrapper {
+    background: #F5F7FA;
+
+    .heroContainer {
+        background: #F5F7FA;
+        padding-top: 64px;
+        padding-bottom: 64px;
+
+        .grid {
+            .gridColLeft {
+                .stack {
+                    justify-content: center;
+                    height: 100%;
+
+                    .title, .subTitle {
+                        font-weight: 600;
+                        font-size: 54px;
+                        line-height: 120%;
+                        color: #4d4d4d;
+
+                        @media (max-width: 48em) {
+                            & {
+                                font-size: 40px;
+                                line-height: 90%;
+                            }
+                        }
+
+                        .subTitle {
+                            color: #8C3B35;
+                        }
+                    }
+
+                    .text {
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 24px;
+                        color: #717171;
+
+                        @media (max-width: 48em) {
+                            & {
+                                font-size: 14px;
+                                line-height: 20px;
+                            }
+                        }
+                    }
+
+                    .button {
+                        width: max-content;
+                        font-weight: 300;
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+                }
+            }
+
+            .gridColRight {
+                .center {
+                    .image {
+                        max-width: 500px;
+                    }
+                }
+            }
+        }
+    }
+}

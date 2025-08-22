@@ -1,7 +1,8 @@
 import { Box, Container, Flex, Image, SegmentedControl, useMatches } from "@mantine/core";
 import Logo from "@/shared/assets/logo/logo.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import classes from "./header.module.pcss";
+import { useTranslation } from "react-i18next";
 
 const language = [
   { label: "UZ", value: "uz" },
@@ -9,11 +10,20 @@ const language = [
 ];
 
 const Header = () => {
-  const [value, setValue] = useState("uz");
+  const [value, setValue] = useState(localStorage.getItem("i18nextLng") || "en");
+  const { i18n } = useTranslation();
   const size = useMatches({
     base: "xs",
     sm: "md",
   });
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
+
+  useEffect(() => {
+    changeLanguage(value);
+  }, [value]);
 
   return (
     <Box className={classes.headerWrapper}>
@@ -23,11 +33,12 @@ const Header = () => {
           <SegmentedControl
             size={size}
             value={value}
+            onChange={(val: string | null): void => setValue(val as any)}
+            defaultValue={localStorage.getItem("i18nextLng") || "en"}
             classNames={{
               root: classes.root,
               indicator: classes.indicator,
             }}
-            onChange={setValue}
             data={language}
           />
         </Flex>

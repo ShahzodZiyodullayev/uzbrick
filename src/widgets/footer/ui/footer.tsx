@@ -15,8 +15,10 @@ import { faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import Logo from "@/shared/assets/logo/logo.png";
 import classes from "./footer.module.pcss";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
   const direction: any = useMatches({
     base: "column-reverse",
     sm: "row",
@@ -34,8 +36,8 @@ const Footer = () => {
           <Stack className={classes.leftStack}>
             <Image visibleFrom="sm" src={Logo} alt="UzBrick logo" className={classes.logoImage} />
             <Stack gap={4} className={classes.copyrightStack}>
-              <Text className={classes.copyrightText}>Авторское право © 2020 Uzbrick ltd.</Text>
-              <Text className={classes.copyrightText}>Все права защищены.</Text>
+              <Text className={classes.copyrightText}>{t("footer.copyright")}</Text>
+              <Text className={classes.copyrightText}>{t("footer.author")}</Text>
             </Stack>
             <Group className={classes.socialGroup}>
               <ActionIcon size="lg" color="#444" className={classes.socialActionIcon}>
@@ -47,11 +49,11 @@ const Footer = () => {
             </Group>
           </Stack>
           <Stack className={classes.rightStack}>
-            <Text className={classes.subscribeTitle}>Будьте в курсе событий</Text>
+            <Text className={classes.subscribeTitle}>{t("footer.input-label")}</Text>
             <TextInput
               size="md"
               variant="filled"
-              placeholder="Your email address"
+              placeholder={t("footer.placeholder")}
               className={classes.input}
               classNames={{ input: classes.inputStyle }}
               rightSection={<FontAwesomeIcon color="#fff" icon={faPaperPlane} />}

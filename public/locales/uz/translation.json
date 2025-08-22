@@ -1,0 +1,88 @@
+{
+  "hero": {
+    "title": {
+      "title": "Sizning kelajagingiz uchun",
+      "sub-title": "ishonchli g'isht"
+    },
+    "description": "UzBrick — biz barcha standartlarga rioya qilgan holda, yuqori sifatli qurilish g‘ishtini ishlab chiqaramiz va loyihangiz mustahkamligi uchun g‘amxo‘rlik qilamiz.",
+    "phone": "Qo‘ng‘iroq buyurtma qilish"
+  },
+  "clients": {
+    "title": "Bizning hamkorlar",
+    "description": "Biz qurilish kompaniyalari, dilerlar, logistika tashkilotlari va savdo tarmoqlari bilan hamkorlik qilishga tayyormiz."
+  },
+  "products": {
+    "title": "Zamonaviy g‘isht ishlab chiqarish — UzBrick sifat kafolati",
+    "product": {
+      "1": {
+        "title": "Keramika g‘ishti",
+        "description": "Yuqori mustahkamlik va olovga chidamlilikka ega klassik qurilish materiali. Tashqi va ichki ishlarda qo‘llash uchun mos."
+      },
+      "2": {
+        "title": "Silikat g‘ishti",
+        "description": "Peregorodkalar va kam qavatli qurilish uchun iqtisodiy yechim. Yaxshi tovush izolyatsiyasi va aniq o‘lchamlari bilan ajralib turadi."
+      },
+      "3": {
+        "title": "Oblisovka g‘ishti",
+        "description": "Fasad yechimlari uchun ideal. Ranglar va teksturalarning keng tanlovi, yuqori sovuqqa chidamlilik."
+      }
+    }
+  },
+  "stats": {
+    "title": {
+      "title": "Hamkorlik",
+      "sub-title": "quruvchilar, dilerlar va arxitektorlar bilan"
+    },
+    "description": "Uzoq muddatli asosda muntazam yetkazib berish",
+    "stat": {
+      "1": "A'zolar",
+      "2": "Klublar",
+      "3": "Tadbirlar uchun bron",
+      "4": "To‘lovlar"
+    }
+  },
+  "partnership": {
+    "title": "Hamkorlik",
+    "description": "Biz quruvchilar, dilerlar, logistika kompaniyalari va savdo tarmoqlari bilan hamkorlikka ochiqmiz. Individual shartlar, ulgurji buyurtmalarga chegirmalar va barcha bosqichlarda qo‘llab-quvvatlashni taklif etamiz. Shartlarni muhokama qilish va shartnoma tuzish uchun biz bilan bog‘laning.",
+    "button": "Bog‘lanish"
+  },
+  "about": {
+    "title": {
+      "title": "UzBrick",
+      "sub-title": " — qurishingiz uchun mustahkam poydevor yaratamiz"
+    },
+    "description": {
+      "1": "UzBrick — bu O‘zbekiston bozorini sifatli qurilish materiallari bilan ta’minlash maqsadida tashkil etilgan zamonaviy g‘isht ishlab chiqarish korxonasi.",
+      "2": "Biz zamonaviy texnologiyalar asosida ishlaymiz va sifat standartlariga qat’iy rioya qilamiz. Kompaniyaning asosiy qadriyatlari — ishonchlilik, ekologiklik va har bir mijozga individual yondashuvdir.",
+      "3": "UzBrick ishlab chiqarish quvvatlari oyiga [miqdorni ko‘rsating] g‘isht ishlab chiqarish imkonini beradi, bu esa har qanday murakkablikdagi obyektlar uchun barqaror yetkazib berishni ta’minlaydi."
+    }
+  },
+  "logistics": {
+    "title": "Logistika va yetkazib berish",
+    "description": "Biz qurilish muddatlariga rioya qilish naqadar muhimligini yaxshi bilamiz. Shu sababli UzBrick g‘ishtni bevosita obyektga tezkor yetkazib berishni taklif qiladi.",
+    "logistic": {
+      "1": {
+        "title": "Mahsulotni tayyorlash",
+        "description": "Barcha mahsulotlar ishonchli tarzda poddonlarga joylanadi, plyonka bilan o‘raladi va markalanadi. Bu esa tashish jarayonida shikastlanishlarning oldini oladi."
+      },
+      "2": {
+        "title": "O‘zbekiston bo‘ylab yetkazib berish",
+        "description": "Biz g‘ishtni Toshkent, viloyat va mamlakatning barcha hududlariga yetkazib beramiz. Buyurtma hajmiga qarab mos yuk mashinalaridan foydalanamiz — kichik tonnali transportlardan tortib yirik furalargacha."
+      },
+      "3": {
+        "title": "Tushirish va hujjatlar bilan ta’minlash",
+        "description": "So‘rov bo‘yicha materiallarni tushirish va joylashtirish xizmatlarini taqdim etamiz. Haydovchi barcha zarur hujjatlarni taqdim qiladi."
+      }
+    }
+  },
+  "footer-highlight": {
+    "title": "O‘zbekistondagi ishonchli g‘isht ishlab chiqaruvchi",
+    "button": "Yuqoriga"
+  },
+  "footer": {
+    "input-label": "Yangiliklardan xabardor bo‘ling",
+    "placeholder": "Sizning email manzilingiz",
+    "copyright": "Mualliflik huquqi © 2020 UzBrick ltd.",
+    "author": "Barcha huquqlar himoyalangan."
+  }
+}

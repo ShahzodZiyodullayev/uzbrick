@@ -1,41 +1,32 @@
 import { Box, Card, Container, SimpleGrid, Stack, Text, Title, useMatches } from "@mantine/core";
 import classes from "./logistics.module.pcss";
+import { useTranslation } from "react-i18next";
 
 const Logistics = () => {
+  const { t } = useTranslation();
   const spacings = useMatches({
     base: 20,
     md: 100,
   });
+
   return (
     <Box className={classes.wrapper}>
       <Container size="lg" className={classes.container}>
         <Stack className={classes.stack}>
-          <Title className={classes.sectionTitle}>Логистика и доставка</Title>
-          <Text className={classes.description}>
-            Мы знаем, насколько важно соблюдать сроки строительства. Поэтому UzBrick предлагает
-            оперативную доставку кирпича прямо на ваш объект.
-          </Text>
+          <Title className={classes.sectionTitle}>{t("logistics.title")}</Title>
+          <Text className={classes.description}>{t("logistics.description")}</Text>
           <SimpleGrid cols={{ base: 1, md: 3 }} spacing={spacings} className={classes.grid}>
             <Card className={classes.card} withBorder>
-              <Title className={classes.cardTitle}>Подготовка продукции</Title>
-              <Text className={classes.cardText}>
-                Вся продукция надежно упаковывается на поддоны, обматывается пленкой и маркируется.
-                Это исключает повреждения при транспортировке.
-              </Text>
+              <Title className={classes.cardTitle}>{t("logistics.logistic.1.title")}</Title>
+              <Text className={classes.cardText}>{t("logistics.logistic.1.description")}</Text>
             </Card>
             <Card className={classes.card} withBorder>
-              <Title className={classes.cardTitle}>Доставка по Узбекистану</Title>
-              <Text className={classes.cardText}>
-                Мы доставляем кирпич по Ташкенту, области и во все регионы страны. Используем
-                грузовой автотранспорт, подходящий под объем заказа — от малотоннажек до фур.
-              </Text>
+              <Title className={classes.cardTitle}>{t("logistics.logistic.2.title")}</Title>
+              <Text className={classes.cardText}>{t("logistics.logistic.2.description")}</Text>
             </Card>
             <Card className={classes.card} withBorder>
-              <Title className={classes.cardTitle}>Разгрузка и сопровождение</Title>
-              <Text className={classes.cardText}>
-                По запросу предоставляем услуги по разгрузке и размещению материала на объекте.
-                Водитель предоставляет все сопроводительные документы.
-              </Text>
+              <Title className={classes.cardTitle}>{t("logistics.logistic.3.title")}</Title>
+              <Text className={classes.cardText}>{t("logistics.logistic.3.description")}</Text>
             </Card>
           </SimpleGrid>
         </Stack>

@@ -9,10 +9,12 @@ import Logo4 from "@/shared/assets/logo/Logo-4.svg";
 import Logo5 from "@/shared/assets/logo/Logo-5.svg";
 import Logo6 from "@/shared/assets/logo/Logo-6.svg";
 import classes from "./clients.module.pcss";
+import { useTranslation } from "react-i18next";
 
 const logos = [Logo1, Logo2, Logo3, Logo4, Logo5, Logo6, Logo1, Logo2, Logo3, Logo4, Logo5, Logo6];
 
 const Clients = () => {
+  const { t } = useTranslation();
   const autoplay = useRef(Autoplay({ delay: 2000 }));
 
   const slideSize = useMatches({
@@ -25,11 +27,8 @@ const Clients = () => {
     <Box className={classes.wrapper}>
       <Container size="lg" className={classes.container}>
         <Flex className={classes.header}>
-          <Title className={classes.title}>Наши клиенты</Title>
-          <Text className={classes.subtitle}>
-            Мы открыты к сотрудничеству с застройщиками, дилерами, логистическими компаниями и
-            торговыми сетями.
-          </Text>
+          <Title className={classes.title}>{t("clients.title")}</Title>
+          <Text className={classes.subtitle}>{t("clients.description")}</Text>
         </Flex>
         <Carousel
           withControls={false}

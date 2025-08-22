@@ -7,10 +7,12 @@ import Logo5 from "@/shared/assets/logo/Logo-5.svg";
 import Logo6 from "@/shared/assets/logo/Logo-6.svg";
 import Tesla from "@/shared/assets/images/tesla.svg";
 import classes from "./about.module.pcss";
+import { useTranslation } from "react-i18next";
 
 const logos = [Logo6, Logo1, Logo2, Logo3, Logo4, Logo5];
 
 const About = () => {
+  const { t } = useTranslation();
   const width = useMatches({
     base: 40,
     sm: 50,
@@ -34,17 +36,16 @@ const About = () => {
                 <Text span className={classes.subTitle}>
                   UzBrick
                 </Text>{" "}
-                — создаем прочную основу для вашего строительства
+                {t("about.title.sub-title")}
               </Text>
               <Text className={classes.description}>
-                UzBrick — это современное предприятие по производству кирпича, основанное с целью
-                обеспечить рынок Узбекистана качественными строительными материалами. <br />
-                <br /> Мы работаем по современным технологиям, строго соблюдая стандарты качества.
-                Главные ценности компании — надежность, экологичность и индивидуальный подход к
-                каждому клиенту. <br />
+                {t("about.description.1")}
                 <br />
-                Производственные мощности UzBrick позволяют выпускать до [указать объем] кирпичей в
-                месяц, что обеспечивает стабильные поставки для объектов любой сложности.
+                <br />
+                {t("about.description.2")}
+                <br />
+                <br />
+                {t("about.description.3")}
               </Text>
               <Group className={classes.logosGroup} gap={gap}>
                 {logos.map((icon, index) => (

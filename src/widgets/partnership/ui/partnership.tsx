@@ -1,8 +1,10 @@
 import { Box, Button, Container, Grid, Image, Stack, Text, Title, useMatches } from "@mantine/core";
 import Partnerships from "@/shared/assets/images/partnership.svg";
 import classes from "./partnership.module.pcss";
+import { useTranslation } from "react-i18next";
 
 const Partnership = () => {
+  const { t } = useTranslation();
   const size = useMatches({
     base: "md",
     sm: "lg",
@@ -17,15 +19,10 @@ const Partnership = () => {
           </Grid.Col>
           <Grid.Col span="auto" className={classes.contentCol}>
             <Stack className={classes.stack}>
-              <Title className={classes.title}>Партнерство</Title>
-              <Text className={classes.description}>
-                Мы открыты к сотрудничеству с застройщиками, дилерами, логистическими компаниями и
-                торговыми сетями. Предлагаем индивидуальные условия, скидки на оптовые партии и
-                поддержку на всех этапах. Свяжитесь с нами для обсуждения условий и заключения
-                договора.
-              </Text>
+              <Title className={classes.title}>{t("partnership.title")}</Title>
+              <Text className={classes.description}>{t("partnership.description")}</Text>
               <Button w="max-content" size={size} className={classes.ctaButton}>
-                Связаться
+                {t("partnership.button")}
               </Button>
             </Stack>
           </Grid.Col>

@@ -11,8 +11,11 @@ import {
 } from "@mantine/core";
 import Cartoon from "@/shared/assets/images/cartoon.svg";
 import classes from "./hero.module.pcss";
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
+  const { t } = useTranslation();
+
   const size = useMatches({
     base: "md",
     sm: "lg",
@@ -25,17 +28,14 @@ const Hero = () => {
           <Grid.Col span={{ base: 12, md: 6 }} className={classes.gridColLeft}>
             <Stack className={classes.stack} gap="xl">
               <Text className={classes.title}>
-                Надежный кирпич для{" "}
+                {t("hero.title.title")}{" "}
                 <Text span className={classes.subTitle}>
-                  вашего будущего
+                  {t("hero.title.sub-title")}
                 </Text>
               </Text>
-              <Text className={classes.text}>
-                UzBrick — производим высококачественный строительный кирпич с соблюдением всех
-                стандартов и с заботой о прочности вашего проекта.
-              </Text>
+              <Text className={classes.text}>{t("hero.description")}</Text>
               <Button size={size} className={classes.button}>
-                Заказать звонок
+                {t("hero.phone")}
               </Button>
             </Stack>
           </Grid.Col>

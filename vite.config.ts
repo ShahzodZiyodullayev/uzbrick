@@ -22,7 +22,6 @@ export default defineConfig({
         manualChunks: {
           react: ["react", "react-dom", "react-router-dom"],
           mantine: ["@mantine/core", "@mantine/hooks", "@mantine/form"],
-          redux: ["@reduxjs/toolkit", "react-redux"],
           carousel: ["embla-carousel-react", "embla-carousel-autoplay"],
           fontawesome: [
             "@fortawesome/fontawesome-svg-core",

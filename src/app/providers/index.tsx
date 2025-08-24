@@ -1,13 +1,7 @@
 import compose from "compose-function";
 
-import { ImageLoadProvider } from "@/shared/lib/image";
-
 import { withMantine } from "./with-mantine";
 
-const withImageLoader = (Component: React.FC) => (props: any) => (
-  <ImageLoadProvider>
-    <Component {...props} />
-  </ImageLoadProvider>
-);
+const withImageLoader = (Component: React.FC) => (props: any) => <Component {...props} />;
 
 export const withProviders = compose(withMantine, withImageLoader);

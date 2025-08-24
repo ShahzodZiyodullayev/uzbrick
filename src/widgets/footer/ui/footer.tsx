@@ -1,3 +1,5 @@
+// src/widgets/footer/ui/footer.tsx
+
 import {
   ActionIcon,
   Box,
@@ -21,8 +23,35 @@ import Logo from "@/shared/assets/logo/logo.png";
 
 import classes from "./footer.module.pcss";
 
+/**
+ * Footer component
+ *
+ * Responsibilities:
+ * - Displays company logo, social links, and copyright text.
+ * - Provides an email subscription input with basic validation.
+ * - Adapts layout direction responsively via Mantine `useMatches`.
+ *
+ * State/Logic:
+ * - Uses Mantine `useForm` for email field with regex validation.
+ * - On submit: currently logs values (replace with API integration).
+ *
+ * Accessibility:
+ * - Form uses native `<form>` for proper submit semantics.
+ * - Icon buttons rely on visual icons; add `aria-label` if needed.
+ *
+ * Styling:
+ * - All visual styles come from `footer.module.pcss`.
+ *
+ * Replace TODOs:
+ * - Hook real submit logic inside `onSubmit`.
+ *
+ * Example integration:
+ * <Footer />
+ */
 const Footer = () => {
   const { t } = useTranslation();
+
+  // Responsive layout values
   const direction: any = useMatches({
     base: "column-reverse",
     sm: "row",
@@ -33,36 +62,54 @@ const Footer = () => {
     sm: 0,
   });
 
+  // Form: single email field with simple pattern validation
   const form = useForm({
     initialValues: {
       email: "",
     },
-
     validate: {
-      email: (value: any) => (/^\S+@\S+\.\S+$/.test(value) ? null : t("errors.mail-error")),
+      email: (value: string) => (/^\S+@\S+\.\S+$/.test(value) ? null : t("errors.mail-error")),
     },
   });
 
   return (
     <Box className={classes.wrapper}>
       <Container size="lg" className={classes.container}>
-        <Flex justify="space-between" gap={gap} direction={direction} className={classes.flex}>
+        <Flex
+          justify="space-between"
+          gap={gap}
+          // Layout reverses on mobile to show subscription above
+          direction={direction}
+          className={classes.flex}>
           <Stack className={classes.leftStack}>
             <Image visibleFrom="sm" src={Logo} alt="UzBrick logo" className={classes.logoImage} />
             <Stack gap={4} className={classes.copyrightStack}>
               <Text className={classes.copyrightText}>{t("footer.copyright")}</Text>
-              <Text className={classes.copyrightText}>{t("footer.author")}</Text>
+              <Text className={classes.authorText}>{t("footer.author")}</Text>
             </Stack>
             <Group className={classes.socialGroup}>
-              <ActionIcon size="lg" color="#444" className={classes.socialActionIcon}>
+              <ActionIcon
+                size="lg"
+                color="#444"
+                className={classes.socialActionIcon}
+                aria-label="Instagram">
                 <FontAwesomeIcon icon={faInstagram} className={classes.socialIcon} />
               </ActionIcon>
-              <ActionIcon size="lg" color="#444" className={classes.socialActionIcon}>
+              <ActionIcon
+                size="lg"
+                color="#444"
+                className={classes.socialActionIcon}
+                aria-label="YouTube">
                 <FontAwesomeIcon icon={faYoutube} className={classes.socialIcon} />
               </ActionIcon>
             </Group>
           </Stack>
-          <form onSubmit={form.onSubmit(values => console.log(values))}>
+
+          <form
+            onSubmit={form.onSubmit(values => {
+              // TODO: integrate subscription API call
+              console.log(values);
+            })}>
             <Stack className={classes.rightStack}>
               <Text className={classes.subscribeTitle}>{t("footer.input-label")}</Text>
               <TextInput
@@ -73,7 +120,11 @@ const Footer = () => {
                 classNames={{ input: classes.inputStyle }}
                 {...form.getInputProps("email")}
                 rightSection={
-                  <Button variant="transparent" type="submit" p={0}>
+                  <Button
+                    variant="transparent"
+                    type="submit"
+                    p={0}
+                    aria-label={t("footer.submit-aria") || "Submit email"}>
                     <FontAwesomeIcon color="#fff" icon={faPaperPlane} size="lg" />
                   </Button>
                 }

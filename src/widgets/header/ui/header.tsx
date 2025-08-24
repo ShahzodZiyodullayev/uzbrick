@@ -1,8 +1,10 @@
 import { Box, Container, Flex, Image, SegmentedControl, useMatches } from "@mantine/core";
-import Logo from "@/shared/assets/logo/logo.svg";
 import { useEffect, useState } from "react";
-import classes from "./header.module.pcss";
 import { useTranslation } from "react-i18next";
+
+import Logo from "@/shared/assets/logo/logo.svg";
+
+import classes from "./header.module.pcss";
 
 const language = [
   { label: "UZ", value: "uz" },

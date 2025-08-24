@@ -1,7 +1,8 @@
 import { Box, Button, Container, Flex, Title, useMatches } from "@mantine/core";
 import { useCallback } from "react";
-import classes from "./footer-hightlight.module.pcss";
 import { useTranslation } from "react-i18next";
+
+import classes from "./footer-hightlight.module.pcss";
 
 const FooterHightlight = () => {
   const { t } = useTranslation();

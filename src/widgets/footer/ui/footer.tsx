@@ -1,6 +1,7 @@
 import {
   ActionIcon,
   Box,
+  Button,
   Container,
   Flex,
   Group,
@@ -12,10 +13,13 @@ import {
 } from "@mantine/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
-import Logo from "@/shared/assets/logo/logo.png";
-import classes from "./footer.module.pcss";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 import { useTranslation } from "react-i18next";
+import { useForm } from "@mantine/form";
+
+import Logo from "@/shared/assets/logo/logo.png";
+
+import classes from "./footer.module.pcss";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -27,6 +31,16 @@ const Footer = () => {
   const gap = useMatches({
     base: 30,
     sm: 0,
+  });
+
+  const form = useForm({
+    initialValues: {
+      email: "",
+    },
+
+    validate: {
+      email: (value: any) => (/^\S+@\S+\.\S+$/.test(value) ? null : t("errors.mail-error")),
+    },
   });
 
   return (
@@ -48,17 +62,24 @@ const Footer = () => {
               </ActionIcon>
             </Group>
           </Stack>
-          <Stack className={classes.rightStack}>
-            <Text className={classes.subscribeTitle}>{t("footer.input-label")}</Text>
-            <TextInput
-              size="md"
-              variant="filled"
-              placeholder={t("footer.placeholder")}
-              className={classes.input}
-              classNames={{ input: classes.inputStyle }}
-              rightSection={<FontAwesomeIcon color="#fff" icon={faPaperPlane} />}
-            />
-          </Stack>
+          <form onSubmit={form.onSubmit(values => console.log(values))}>
+            <Stack className={classes.rightStack}>
+              <Text className={classes.subscribeTitle}>{t("footer.input-label")}</Text>
+              <TextInput
+                size="md"
+                variant="filled"
+                placeholder={t("footer.placeholder")}
+                className={classes.input}
+                classNames={{ input: classes.inputStyle }}
+                {...form.getInputProps("email")}
+                rightSection={
+                  <Button variant="transparent" type="submit" p={0}>
+                    <FontAwesomeIcon color="#fff" icon={faPaperPlane} size="lg" />
+                  </Button>
+                }
+              />
+            </Stack>
+          </form>
         </Flex>
       </Container>
     </Box>

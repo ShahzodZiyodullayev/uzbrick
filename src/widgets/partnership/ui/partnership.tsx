@@ -1,10 +1,14 @@
 import { Box, Button, Container, Grid, Image, Stack, Text, Title, useMatches } from "@mantine/core";
-import Partnerships from "@/shared/assets/images/partnership.svg";
-import classes from "./partnership.module.pcss";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+
+import Partnerships from "@/shared/assets/images/partnership.svg";
+
+import classes from "./partnership.module.pcss";
 
 const Partnership = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const size = useMatches({
     base: "md",
     sm: "lg",
@@ -21,7 +25,11 @@ const Partnership = () => {
             <Stack className={classes.stack}>
               <Title className={classes.title}>{t("partnership.title")}</Title>
               <Text className={classes.description}>{t("partnership.description")}</Text>
-              <Button w="max-content" size={size} className={classes.ctaButton}>
+              <Button
+                w="max-content"
+                size={size}
+                className={classes.ctaButton}
+                onClick={() => navigate("phone")}>
                 {t("partnership.button")}
               </Button>
             </Stack>

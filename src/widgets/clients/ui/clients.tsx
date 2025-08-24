@@ -2,14 +2,16 @@ import { Carousel } from "@mantine/carousel";
 import { Image, useMatches, Box, Container, Flex, Text, Title } from "@mantine/core";
 import { useRef } from "react";
 import Autoplay from "embla-carousel-autoplay";
+import { useTranslation } from "react-i18next";
+
 import Logo1 from "@/shared/assets/logo/Logo-1.svg";
 import Logo2 from "@/shared/assets/logo/Logo-2.svg";
 import Logo3 from "@/shared/assets/logo/Logo-3.svg";
 import Logo4 from "@/shared/assets/logo/Logo-4.svg";
 import Logo5 from "@/shared/assets/logo/Logo-5.svg";
 import Logo6 from "@/shared/assets/logo/Logo-6.svg";
+
 import classes from "./clients.module.pcss";
-import { useTranslation } from "react-i18next";
 
 const logos = [Logo1, Logo2, Logo3, Logo4, Logo5, Logo6, Logo1, Logo2, Logo3, Logo4, Logo5, Logo6];
 

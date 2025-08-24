@@ -1,5 +1,6 @@
-import Hero from "@/widgets/hero";
 import { Box } from "@mantine/core";
+
+import Hero from "@/widgets/hero";
 import Clients from "@/widgets/clients";
 import Products from "@/widgets/products";
 import Stats from "@/widgets/stats";

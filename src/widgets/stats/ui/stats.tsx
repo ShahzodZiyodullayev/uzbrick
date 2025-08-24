@@ -1,10 +1,12 @@
 import { Box, Container, Grid, SimpleGrid, Stack, Text, Title, Image } from "@mantine/core";
+import { useTranslation } from "react-i18next";
+
 import Logo1 from "@/shared/assets/logo/person.svg";
 import Logo2 from "@/shared/assets/logo/hands.png";
 import Logo3 from "@/shared/assets/logo/click.svg";
 import Logo4 from "@/shared/assets/logo/cards.svg";
+
 import classes from "./stats.module.pcss";
-import { useTranslation } from "react-i18next";
 
 const Stats = () => {
   const { t } = useTranslation();

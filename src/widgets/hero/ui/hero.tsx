@@ -9,10 +9,12 @@ import {
   Text,
   useMatches,
 } from "@mantine/core";
-import Cartoon from "@/shared/assets/images/cartoon.svg";
-import classes from "./hero.module.pcss";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+
+import Cartoon from "@/shared/assets/images/cartoon.svg";
+
+import classes from "./hero.module.pcss";
 
 const Hero = () => {
   const { t } = useTranslation();

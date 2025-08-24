@@ -1,6 +1,7 @@
 import { Box, Card, Container, SimpleGrid, Stack, Text, Title, useMatches } from "@mantine/core";
-import classes from "./products.module.pcss";
 import { useTranslation } from "react-i18next";
+
+import classes from "./products.module.pcss";
 
 const Products = () => {
   const { t } = useTranslation();

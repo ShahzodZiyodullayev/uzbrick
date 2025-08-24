@@ -94,5 +94,11 @@
       "comment": "Izoh"
     },
     "button": "Qo‘ng‘iroq buyurtma qilish"
+  },
+  "errors": {
+    "name-error": "Ismni kiritishingiz shart.",
+    "mail-error": "To‘g‘ri email manzilini kiriting.",
+    "phone-error": "Telefon raqami noto‘g‘ri formatda.",
+    "comment-error": "Izoh juda qisqa. Kamida 10 ta belgi kiriting."
   }
 }

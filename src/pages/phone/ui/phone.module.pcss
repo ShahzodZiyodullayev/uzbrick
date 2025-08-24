@@ -16,54 +16,58 @@
 
         .formCol {
             background: #f4f7fa;
-            padding: var(--mantine-spacing-lg);
 
             .formFlex {
+                padding: var(--mantine-spacing-lg);
                 justify-content: center;
                 align-items: center;
                 height: 100vh;
 
-                .formStack {
-                    gap: var(--mantine-spacing-xl);
+                .form {
+                    min-width: 60%;
 
-                    .formStackTitle {
-                        gap: var(--mantine-spacing-xs);
+                    .formStack {
+                        gap: var(--mantine-spacing-xl);
 
-                        .title {
-                            font-weight: 500;
-                            font-size: 32px;
-                            line-height: 42px;
-                            color: #8C3B35;
+                        .formStackTitle {
+                            gap: var(--mantine-spacing-xs);
+
+                            .title {
+                                font-weight: 500;
+                                font-size: 32px;
+                                line-height: 42px;
+                                color: #8C3B35;
+                            }
+
+                            .subtitle {
+                                font-weight: 400;
+                                font-size: 16px;
+                                line-height: 24px;
+                                color: #61656E;
+                            }
                         }
 
-                        .subtitle {
-                            font-weight: 400;
-                            font-size: 16px;
-                            line-height: 24px;
-                            color: #61656E;
-                        }
-                    }
+                        .inputsStack {
+                            .input {
+                                border-radius: var(--mantine-radius-xl);
+                            }
 
-                    .inputsStack {
-                        .input {
-                            border-radius: var(--mantine-radius-xl);
-                        }
+                            .inputStyle {
+                                color: #000;
+                                background: #fff;
+                            }
 
-                        .inputStyle {
-                            color: #fff;
-                            background: #fff;
-                        }
+                            .inputStyle::placeholder {
+                                font-weight: 400;
+                                font-size: 16px;
+                                line-height: 24px;
+                                color: #61656E;
 
-                        .inputStyle::placeholder {
-                            font-weight: 400;
-                            font-size: 16px;
-                            line-height: 24px;
-                            color: #61656E;
-
-                            @media (max-width: 48em) {
-                                & {
-                                    font-size: 14px;
-                                    line-height: 20px;
+                                @media (max-width: 48em) {
+                                    & {
+                                        font-size: 14px;
+                                        line-height: 20px;
+                                    }
                                 }
                             }
                         }

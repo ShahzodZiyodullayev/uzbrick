@@ -665,6 +665,11 @@
   resolved "https://registry.yarnpkg.com/@mantine/hooks/-/hooks-8.2.5.tgz#a566e8a3327a4889a196e59725d2a0b2dacd43fb"
   integrity sha512-uIB7CN+isRZs81JrpcdOd/EmtReC3aMmOXCfuy55jlCLcWN374O5p2Ht+lC1FDk9+r5pFhw9iMzqMv5P0rbZAw==
 
+"@mantine/modals@^8.2.7":
+  version "8.2.7"
+  resolved "https://registry.yarnpkg.com/@mantine/modals/-/modals-8.2.7.tgz#2344dc4175cf3f042eea96290e9cbb4b1c28f656"
+  integrity sha512-btbZ4lO7S931jklBtmE6VTHUG7g4VuQLuloDxfWa21nK4X7pUjq9zvaeuYVkIVJuUxm4kXn/mMHnw57V2B6Tvw==
+
 "@mantine/notifications@^8.1.2":
   version "8.2.5"
   resolved "https://registry.yarnpkg.com/@mantine/notifications/-/notifications-8.2.5.tgz#daf022fc4c47101a35bc3837d33f919160e60fbc"
@@ -673,10 +678,22 @@
     "@mantine/store" "8.2.5"
     react-transition-group "4.4.5"
 
+"@mantine/spotlight@^8.2.7":
+  version "8.2.7"
+  resolved "https://registry.yarnpkg.com/@mantine/spotlight/-/spotlight-8.2.7.tgz#6e797ffaec88aa5abf3ef8725336346901d4dce3"
+  integrity sha512-S6+OzJJTnTOk9mg2e0pV7vENvP+Bp5INAolbm7G2UZK+gczw30leo7xbCmmDmCtEDTgvJau2xiABtPjYOYadhg==
+  dependencies:
+    "@mantine/store" "8.2.7"
+
 "@mantine/store@8.2.5":
   version "8.2.5"
   resolved "https://registry.yarnpkg.com/@mantine/store/-/store-8.2.5.tgz#75e63d5799b1dca28f21e64e7641812dc4bdc96b"
   integrity sha512-7lK45NPYcaEluA09+UgKnuRQ2yYLCseWqg9uGcMgO1snWdApbeN4u6eqxRkLtNnfDgV2HRnfPteZd0t8/6SsIg==
+
+"@mantine/store@8.2.7":
+  version "8.2.7"
+  resolved "https://registry.yarnpkg.com/@mantine/store/-/store-8.2.7.tgz#1f4c9056cebdbca27895f42fe54a7e308a66447a"
+  integrity sha512-TQye6nRFDOQ+HQovQSjQlFHrivn6NqdiZAuytszOnB9jqgKSzPqQxK0mEynAxJsomaO9K1rrj7clZcPNgZc+Pw==
 
 "@napi-rs/wasm-runtime@^0.2.11":
   version "0.2.12"
@@ -2207,6 +2224,21 @@ flatted@^3.2.9:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.3.3.tgz#67c8fad95454a7c7abebf74bb78ee74a44023358"
   integrity sha512-GX+ysw4PBCz0PzosHDepZGANEuFCMLrnRTiEy9McGjmkCQYwRq4A/X786G/fjM/+OjsWSU1ZrY5qyARZmO/uwg==
 
+focus-trap-react@^11.0.4:
+  version "11.0.4"
+  resolved "https://registry.yarnpkg.com/focus-trap-react/-/focus-trap-react-11.0.4.tgz#889315c28b86ca7f3e9978710eb73819c0bb9b2c"
+  integrity sha512-tC7jC/yqeAqhe4irNIzdyDf9XCtGSeECHiBSYJBO/vIN0asizbKZCt8TarB6/XqIceu42ajQ/U4lQJ9pZlWjrg==
+  dependencies:
+    focus-trap "^7.6.5"
+    tabbable "^6.2.0"
+
+focus-trap@^7.6.5:
+  version "7.6.5"
+  resolved "https://registry.yarnpkg.com/focus-trap/-/focus-trap-7.6.5.tgz#56f0814286d43c1a2688e9bc4f31f17ae047fb76"
+  integrity sha512-7Ke1jyybbbPZyZXFxEftUtxFGLMpE2n6A+z//m4CRDlj0hW+o3iYSmh8nFlYMurOiJVDmJRilUQtJr08KfIxlg==
+  dependencies:
+    tabbable "^6.2.0"
+
 for-each@^0.3.3, for-each@^0.3.5:
   version "0.3.5"
   resolved "https://registry.yarnpkg.com/for-each/-/for-each-0.3.5.tgz#d650688027826920feeb0af747ee7b9421a41d47"
@@ -2492,6 +2524,13 @@ internal-slot@^1.1.0:
     es-errors "^1.3.0"
     hasown "^2.0.2"
     side-channel "^1.1.0"
+
+invariant@^2.2.4:
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
+  integrity sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==
+  dependencies:
+    loose-envify "^1.0.0"
 
 is-array-buffer@^3.0.4, is-array-buffer@^3.0.5:
   version "3.0.5"
@@ -2822,7 +2861,7 @@ lodash.merge@^4.6.2:
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
 
-loose-envify@^1.4.0:
+loose-envify@^1.0.0, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
@@ -3184,6 +3223,20 @@ react-dom@^19.1.1:
   dependencies:
     scheduler "^0.26.0"
 
+react-fast-compare@^3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.2.tgz#929a97a532304ce9fee4bcae44234f1ce2c21d49"
+  integrity sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==
+
+react-helmet-async@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/react-helmet-async/-/react-helmet-async-2.0.5.tgz#cfc70cd7bb32df7883a8ed55502a1513747223ec"
+  integrity sha512-rYUYHeus+i27MvFE+Jaa4WsyBKGkL6qVgbJvSBoX8mbsWoABJXdEO0bZyi0F6i+4f0NuIb8AvqPMj3iXFHkMwg==
+  dependencies:
+    invariant "^2.2.4"
+    react-fast-compare "^3.2.2"
+    shallowequal "^1.1.0"
+
 react-i18next@*, react-i18next@^15.7.1:
   version "15.7.1"
   resolved "https://registry.yarnpkg.com/react-i18next/-/react-i18next-15.7.1.tgz#f3b573f41b3d57fc217dfa35be93352dc2eb0afc"
@@ -3475,6 +3528,11 @@ set-proto@^1.0.0:
     es-errors "^1.3.0"
     es-object-atoms "^1.0.0"
 
+shallowequal@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/shallowequal/-/shallowequal-1.1.0.tgz#188d521de95b9087404fd4dcb68b13df0ae4e7f8"
+  integrity sha512-y0m1JoUZSlPAjXVtPPW70aZWfIL/dSP7AFkRnniLCrK/8MDKog3TySTBmckD+RObVxH0v4Tox67+F14PdED2oQ==
+
 shebang-command@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/shebang-command/-/shebang-command-2.0.0.tgz#ccd0af4f8835fbdc265b82461aaf0c36663f34ea"
@@ -3696,7 +3754,7 @@ synckit@^0.11.7:
   dependencies:
     "@pkgr/core" "^0.2.9"
 
-tabbable@^6.0.0:
+tabbable@^6.0.0, tabbable@^6.2.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/tabbable/-/tabbable-6.2.0.tgz#732fb62bc0175cfcec257330be187dcfba1f3b97"
   integrity sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==

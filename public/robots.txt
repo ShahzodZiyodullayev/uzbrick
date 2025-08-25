@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://uzbrick.uz/sitemap.xml
+
+# Block access to source maps and other development files
+Disallow: /*.map$
+Disallow: /src/
+Disallow: /node_modules/
+
+# Allow all popular search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yandexbot
+Allow: /
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Main pages -->
+  <url>
+    <loc>https://uzbrick.uz/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uzbrick.uz/" />
+    <xhtml:link rel="alternate" hreflang="uz" href="https://uzbrick.uz/?lang=uz" />
+  </url>
+
+  <url>
+    <loc>https://uzbrick.uz/phone</loc>
+    <lastmod>2025-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uzbrick.uz/phone" />
+    <xhtml:link rel="alternate" hreflang="uz" href="https://uzbrick.uz/phone?lang=uz" />
+  </url>
+
+  <!-- Language variations -->
+  <url>
+    <loc>https://uzbrick.uz/?lang=uz</loc>
+    <lastmod>2025-08-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://uzbrick.uz/?lang=uz" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uzbrick.uz/" />
+  </url>
+
+  <url>
+    <loc>https://uzbrick.uz/phone?lang=uz</loc>
+    <lastmod>2025-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://uzbrick.uz/phone?lang=uz" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uzbrick.uz/phone" />
+  </url>
+
+</urlset>
+

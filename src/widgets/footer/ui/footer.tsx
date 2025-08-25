@@ -20,6 +20,7 @@ import { useTranslation } from "react-i18next";
 import { useForm } from "@mantine/form";
 
 import Logo from "@/shared/assets/logo/logo.png";
+import { ariaPatterns } from "@/shared/lib/accessibility.ts";
 
 import classes from "./footer.module.pcss";
 
@@ -73,7 +74,7 @@ const Footer = () => {
   });
 
   return (
-    <Box className={classes.wrapper}>
+    <Box className={classes.wrapper} {...ariaPatterns.contentinfo}>
       <Container size="lg" className={classes.container}>
         <Flex
           justify="space-between"
@@ -82,24 +83,40 @@ const Footer = () => {
           direction={direction}
           className={classes.flex}>
           <Stack className={classes.leftStack}>
-            <Image visibleFrom="sm" src={Logo} alt="UzBrick logo" className={classes.logoImage} />
+            <Image
+              visibleFrom="sm"
+              src={Logo}
+              className={classes.logoImage}
+              alt="UzBrick логотип компании"
+              role="img"
+            />
             <Stack gap={4} className={classes.copyrightStack}>
               <Text className={classes.copyrightText}>{t("footer.copyright")}</Text>
               <Text className={classes.authorText}>{t("footer.author")}</Text>
             </Stack>
-            <Group className={classes.socialGroup}>
+            <Group className={classes.socialGroup} role="list" aria-label="Социальные сети">
               <ActionIcon
                 size="lg"
                 color="#444"
                 className={classes.socialActionIcon}
-                aria-label="Instagram">
+                component="a"
+                href="https://instagram.com/uzbrick"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Подписаться на UzBrick в Instagram"
+                role="listitem">
                 <FontAwesomeIcon icon={faInstagram} className={classes.socialIcon} />
               </ActionIcon>
               <ActionIcon
                 size="lg"
                 color="#444"
                 className={classes.socialActionIcon}
-                aria-label="YouTube">
+                component="a"
+                href="https://youtube.com/@uzbrick"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Подписаться на канал UzBrick в YouTube"
+                role="listitem">
                 <FontAwesomeIcon icon={faYoutube} className={classes.socialIcon} />
               </ActionIcon>
             </Group>
@@ -109,16 +126,24 @@ const Footer = () => {
             onSubmit={form.onSubmit(values => {
               // TODO: integrate subscription API call
               console.log(values);
-            })}>
+            })}
+            aria-label="Подписка на новости"
+            role="form">
             <Stack className={classes.rightStack}>
-              <Text className={classes.subscribeTitle}>{t("footer.input-label")}</Text>
+              <Text className={classes.subscribeTitle} component="label" htmlFor="newsletter-email">
+                {t("footer.input-label")}
+              </Text>
               <TextInput
+                id="newsletter-email"
                 size="md"
                 variant="filled"
                 placeholder={t("footer.placeholder")}
                 className={classes.input}
                 classNames={{ input: classes.inputStyle }}
                 {...form.getInputProps("email")}
+                aria-describedby="email-description"
+                aria-required="true"
+                autoComplete="email"
                 rightSection={
                   <Button
                     variant="transparent"
@@ -129,6 +154,9 @@ const Footer = () => {
                   </Button>
                 }
               />
+              <div id="email-description" className="sr-only">
+                Введите ваш email для получения новостей и обновлений от UzBrick
+              </div>
             </Stack>
           </form>
         </Flex>

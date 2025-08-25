@@ -14,7 +14,9 @@
  */
 
 import { Box } from "@mantine/core";
+import { useTranslation } from "react-i18next";
 
+import { SEO } from "@/shared/ui/SEO";
 import Hero from "@/widgets/hero";
 import Clients from "@/widgets/clients";
 import Products from "@/widgets/products";
@@ -28,25 +30,43 @@ import FooterHightlight from "@/widgets/footer-hightlight";
  * Renders the landing page composition.
  */
 const Home = () => {
+  const { i18n } = useTranslation();
+  const currentLang = i18n.language;
+  const isRussian = currentLang === "ru";
+
+  const pageTitle = isRussian ? "Главная страница" : "Bosh sahifa";
+
+  const pageDescription = isRussian
+    ? "UzBrick - ведущий поставщик качественных строительных материалов в Узбекистане. Кирпич, блоки, цемент и другие материалы для строительства по выгодным ценам."
+    : "UzBrick - Uzbekistondagi sifatli qurilish materiallarining yetakchi yetkazib beruvchisi. G'isht, bloklar, sement va boshqa qurilish materiallari qulay narxlarda.";
+
   return (
-    <Box mih={630}>
-      {/* Above-the-fold */}
-      <Hero />
-      {/* Social proof / partners */}
-      <Clients />
-      {/* Product showcase */}
-      <Products />
-      {/* Metrics / trust indicators */}
-      <Stats />
-      {/* Partnership call-to-action */}
-      <Partnership />
-      {/* Company summary */}
-      <About />
-      {/* Delivery / infrastructure info */}
-      <Logistics />
-      {/* Final CTA / highlight footer block */}
-      <FooterHightlight />
-    </Box>
+    <>
+      <SEO
+        title={pageTitle}
+        description={pageDescription}
+        url="https://uzbrick.uz/"
+        type="website"
+      />
+      <Box component="main" mih="100vh">
+        {/* Above-the-fold */}
+        <Hero />
+        {/* Social proof / partners */}
+        <Clients />
+        {/* Product showcase */}
+        <Products />
+        {/* Metrics / trust indicators */}
+        <Stats />
+        {/* Partnership call-to-action */}
+        <Partnership />
+        {/* Company summary */}
+        <About />
+        {/* Delivery / infrastructure info */}
+        <Logistics />
+        {/* Final CTA / highlight footer block */}
+        <FooterHightlight />
+      </Box>
+    </>
   );
 };
 

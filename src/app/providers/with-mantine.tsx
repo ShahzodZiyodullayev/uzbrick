@@ -9,6 +9,9 @@ import { emotionTransform, MantineEmotionProvider } from "@mantine/emotion";
 export const withMantine = (component: ComponentType) => () => {
   const theme = createTheme({
     fontFamily: "Inter, sans-serif",
+    respectReducedMotion: true,
+    focusRing: "auto",
+    cursorType: "pointer",
     components: {
       Button: Button.extend({
         defaultProps: {

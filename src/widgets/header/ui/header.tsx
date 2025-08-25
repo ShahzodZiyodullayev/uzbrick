@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import Logo from "@/shared/assets/logo/logo.svg";
+import { ariaPatterns } from "@/shared/lib/accessibility.ts";
 
 import classes from "./header.module.pcss";
 
@@ -63,7 +64,7 @@ const Header = () => {
   }, [value]);
 
   return (
-    <Box className={classes.headerWrapper}>
+    <Box className={classes.headerWrapper} {...ariaPatterns.banner}>
       <Container size="xl" className={classes.headerContainer}>
         <Flex className={classes.headerFlex}>
           {/* Brand logo */}
@@ -79,7 +80,13 @@ const Header = () => {
               indicator: classes.indicator,
             }}
             data={language}
+            aria-label="Выберите язык интерфейса"
+            role="radiogroup"
+            aria-describedby="language-description"
           />
+          <div id="language-description" className="sr-only">
+            Переключатель языка: выберите узбекский или русский язык
+          </div>
         </Flex>
       </Container>
     </Box>

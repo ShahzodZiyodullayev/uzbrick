@@ -22,7 +22,7 @@ import { useForm } from "@mantine/form";
 import { useRef } from "react";
 import { IMaskInput } from "react-imask";
 
-import Cartoon from "@/shared/assets/images/cartoon.svg";
+import Cartoon from "@/shared/assets/images/cartoon.png";
 import { SEO } from "@/shared/ui/SEO";
 
 import classes from "./phone.module.pcss";

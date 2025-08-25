@@ -49,7 +49,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
-import Cartoon from "@/shared/assets/images/cartoon.svg";
+import Cartoon from "@/shared/assets/images/cartoon.png";
 
 import classes from "./hero.module.pcss";
 

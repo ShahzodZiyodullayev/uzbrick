@@ -14,8 +14,9 @@ import {
   useMatches,
 } from "@mantine/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
-import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons/faInstagram";
+import { faYoutube } from "@fortawesome/free-brands-svg-icons/faYoutube";
+import { faPaperPlane } from "@fortawesome/free-regular-svg-icons/faPaperPlane";
 import { useTranslation } from "react-i18next";
 import { useForm } from "@mantine/form";
 

@@ -16,7 +16,7 @@ import {
 } from "@mantine/core";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons/faXmark";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "@mantine/form";
 import { useRef } from "react";

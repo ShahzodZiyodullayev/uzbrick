@@ -10,27 +10,49 @@ export default defineConfig({
     react(),
     tsconfigPaths(),
     visualizer({ open: true, template: "treemap" }),
-    svgr(),
+    svgr({
+      svgrOptions: {
+        exportType: "named",
+        svgo: true,
+        svgoConfig: {
+          plugins: [
+            { name: "removeDimensions", active: true },
+            { name: "removeViewBox", active: false },
+          ],
+        },
+      },
+    }),
   ].filter(Boolean),
   resolve: {
     alias: [{ find: "@", replacement: path.resolve(__dirname, "src") }],
   },
   build: {
+    target: "es2018",
+    sourcemap: false,
+    minify: "esbuild",
+    cssCodeSplit: true,
     rollupOptions: {
       treeshake: true,
       output: {
-        manualChunks: {
-          react: ["react", "react-dom", "react-router-dom"],
-          mantine: ["@mantine/core", "@mantine/hooks", "@mantine/form"],
-          carousel: ["embla-carousel-react", "embla-carousel-autoplay"],
-          fontawesome: [
-            "@fortawesome/fontawesome-svg-core",
-            "@fortawesome/free-solid-svg-icons",
-            "@fortawesome/free-brands-svg-icons",
-            "@fortawesome/react-fontawesome",
-          ],
+        manualChunks(id) {
+          if (id.includes("node_modules")) {
+            if (id.includes("react")) return "react";
+            if (id.includes("@mantine")) return "mantine";
+            if (id.includes("embla-carousel")) return "carousel";
+            if (id.includes("i18next")) return "i18n";
+            if (id.includes("@fortawesome")) return "fontawesome";
+            return "vendor";
+          }
+          if (id.includes("/src/pages/home/")) return "page-home";
+          if (id.includes("/src/pages/phone/")) return "page-phone";
         },
       },
     },
+    commonjsOptions: {
+      transformMixedEsModules: true,
+    },
+  },
+  optimizeDeps: {
+    include: ["react", "react-dom", "react-helmet-async"],
   },
 });
